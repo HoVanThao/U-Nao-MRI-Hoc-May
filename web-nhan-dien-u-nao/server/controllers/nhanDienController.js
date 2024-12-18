@@ -55,6 +55,7 @@ export const createNhanDien = async (req, res) => {
             const response = await cloudinary.v2.uploader.upload(file, {
                 folder: 'NhanDien',
             });
+
             req.body.image = response.secure_url;
             req.body.imagePublicId = response.public_id;
         }
